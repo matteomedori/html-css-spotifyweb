@@ -21,6 +21,7 @@ VARIABLES
   --menu-left-grey: #717171;
   --menu-left-border: #adff2f;
   --bg--footer: #282828;
+  --bg-main-content: #141922;
 }
 
 /*
@@ -149,10 +150,32 @@ MAIN
 
 /*main content*/
 
+main {
+  position: relative;
+}
+
 #main-content {
-  width: 100%;
-  background-color: green;
+  flex-grow: 1;
+  background-color: var(--bg-main-content);
   overflow-y: scroll;
+}
+
+#main-content .fixed {
+  width: calc(100vw - 230px);
+  height: 85px;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  right: 0;
+  justify-content: end;
+  padding: 20px;
+}
+
+.fixed button {
+  all: unset;
+  color: white;
+  padding: 10px 40px;
+  border: 1px solid white;
+  border-radius: 30px;
 }
 
 /*
