@@ -19,6 +19,8 @@ VARIABLES
 :root {
   --bg-menu-left: black;
   --menu-left-grey: #717171;
+  --menu-left-border: #adff2f;
+  --bg--footer: #282828;
 }
 
 /*
@@ -65,7 +67,6 @@ MAIN
   background-color: var(--bg-menu-left);
   color: var(--menu-left-grey);
   flex-direction: column;
-  justify-content: space-between;
 }
 
 #logo {
@@ -75,7 +76,6 @@ MAIN
 
 .menu-under-logo {
   color: var(--menu-left-grey);
-  padding: 20px;
 }
 
 .menu-under-logo span {
@@ -84,6 +84,12 @@ MAIN
 
 .menu-under-logo > div {
   margin-bottom: 5px;
+  padding: 0 20px;
+}
+
+.menu-under-logo > div:first-of-type {
+  color: white;
+  border-left: 2px solid var(--menu-left-border);
 }
 
 .menu-under-logo img {
@@ -92,10 +98,15 @@ MAIN
 
 .playlist {
   padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  overflow: hidden;
 }
 
 .playlist h4 {
   color: white;
+  margin-top: 20px;
   margin-bottom: 10px;
 }
 
@@ -103,6 +114,11 @@ MAIN
   color: var(--menu-left-grey);
   font-size: 50px;
   margin-right: 10px;
+}
+
+.playlist ul {
+  flex-grow: 1;
+  overflow-y: scroll;
 }
 
 .playlist > *,
@@ -117,6 +133,10 @@ MAIN
 .bottom-menu-left img {
   width: 10%;
   margin-right: 10px;
+}
+
+.bottom-menu-left span {
+  vertical-align: top;
 }
 
 .bottom-menu-left hr {
@@ -140,10 +160,98 @@ MAIN
 FOOTER
 ---------------
 */
+/*footer common*/
 
 footer {
   height: 90px;
-  background-color: red;
+  background-color: var(--bg--footer);
+  color: white;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+footer > div:first-of-type,
+footer > div:last-of-type {
+  width: 20%;
+}
+
+footer hr:first-of-type {
+  padding: 2px;
+  border-radius: 5px;
+  border: none;
+  background-color: var(--menu-left-grey);
+}
+
+footer hr:last-of-type {
+  padding: 2px;
+  border-radius: 5px;
+  border: none;
+  width: 30%;
+  background-color: #c1c1c1;
+  position: absolute;
+  top: 0;
+}
+
+footer .volume-bar {
+  position: relative;
+}
+
+/*footer left part*/
+
+footer > div:first-of-type .footer-img {
+  width: 13%;
+}
+
+footer > div:first-of-type i,
+footer .name-song {
+  color: var(--menu-left-grey);
+}
+
+footer .text-song {
+  margin-left: 10px;
+  margin-right: 25px;
+}
+
+/*footer center part*/
+
+footer > div:nth-of-type(2) {
+  width: 30%;
+  flex-direction: column;
+  gap: 15px;
+}
+
+footer > div:nth-of-type(2) .volume-bar {
+  flex-grow: 1;
+  margin: 0 10px;
+}
+
+footer > div:nth-of-type(2) .row-top {
+  align-self: center;
+}
+
+footer > div:nth-of-type(2) .row-top i {
+  font-size: 20px;
+  padding: 0 20px;
+}
+
+footer > div:nth-of-type(2) .row-top i:nth-of-type(3) {
+  font-size: 30px;
+  padding: 0 30px;
+}
+
+/*footer right part*/
+
+footer > div:last-of-type {
+  gap: 15px;
+  justify-content: end;
+}
+
+footer > div:last-of-type > div {
+  width: 120px;
+}
+
+footer > div:last-of-type i {
+  color: white;
 }
 
 /*
@@ -154,6 +262,8 @@ RESPONSIVE
 
 /*da 0 a 576px*/
 @media screen and (max-width: 576px) {
+  /*common*/
+
   .xs-none {
     display: none;
   }
@@ -162,14 +272,24 @@ RESPONSIVE
     display: block;
   }
 
+  /*menu-left*/
+
   #menu-left {
     width: 50px;
     padding: 5px 10px;
   }
 
   .menu-under-logo {
-    padding: 0;
     margin-top: 20px;
+  }
+
+  .menu-under-logo > div {
+    margin-bottom: 5px;
+    padding: 0;
+  }
+
+  .menu-under-logo > div:first-of-type {
+    border: none;
   }
 
   .menu-under-logo img {
@@ -178,10 +298,24 @@ RESPONSIVE
 
   .bottom-menu-left {
     padding: 0;
+    justify-content: flex-end;
+    flex-direction: column;
+    display: flex;
+    flex-grow: 1;
   }
 
   .bottom-menu-left img {
     width: 90%;
     margin-right: 0;
+  }
+}
+
+/*da 768px in poi*/
+@media screen and (min-width: 768px) {
+  /*footer*/
+
+  footer .icons-foot-left {
+    display: flex;
+    gap: 10px;
   }
 }
