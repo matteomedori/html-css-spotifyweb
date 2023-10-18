@@ -170,12 +170,17 @@ main {
   padding: 20px;
 }
 
-.fixed button {
+#main-content .fixed button {
   all: unset;
   color: white;
   padding: 10px 40px;
   border: 1px solid white;
   border-radius: 30px;
+  cursor: pointer;
+}
+
+#main-content .under-fixed {
+  margin-top: 85px;
 }
 
 /*
@@ -195,7 +200,7 @@ footer {
 
 footer > div:first-of-type,
 footer > div:last-of-type {
-  width: 20%;
+  width: 30%;
 }
 
 footer hr:first-of-type {
@@ -250,16 +255,16 @@ footer > div:nth-of-type(2) .volume-bar {
 
 footer > div:nth-of-type(2) .row-top {
   align-self: center;
+  gap: 20px;
 }
 
 footer > div:nth-of-type(2) .row-top i {
   font-size: 20px;
-  padding: 0 20px;
 }
 
 footer > div:nth-of-type(2) .row-top i:nth-of-type(3) {
   font-size: 30px;
-  padding: 0 30px;
+  padding: 0 20px;
 }
 
 /*footer right part*/
@@ -331,6 +336,11 @@ RESPONSIVE
     width: 90%;
     margin-right: 0;
   }
+
+  /*main content*/
+
+  #main-content .fixed {
+    width: calc(100vw - 50px);
 }
 
 /*da 768px in poi*/
