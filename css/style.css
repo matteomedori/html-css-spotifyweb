@@ -12,9 +12,45 @@ RESET
 
 /*
 ---------------
+VARIABLES
+---------------
+*/
+
+:root {
+  --bg-menu-left: black;
+  --menu-left-grey: #717171;
+}
+
+/*
+---------------
 COMMON
 ---------------
 */
+
+.flex {
+  display: flex;
+}
+
+.align-center {
+  align-items: center;
+}
+
+img {
+  width: 100%;
+}
+
+.xs-display {
+  display: none;
+}
+
+#menu-left,
+#main-content {
+  height: calc(100vh - 90px);
+}
+
+ul {
+  list-style: none;
+}
 
 /*
 ---------------
@@ -22,25 +58,64 @@ MAIN
 ---------------
 */
 
-main {
-  display: flex;
-}
+/*menu-left*/
 
-.menu-left,
-.main-content {
-  height: calc(100vh - 90px);
-}
-
-.menu-left {
+#menu-left {
   width: 230px;
-  background-color: yellow;
+  background-color: var(--bg-menu-left);
+  color: var(--menu-left-grey);
 }
 
-.main-content {
+#logo {
+  width: 70%;
+  padding: 20px;
+}
+
+.menu-under-logo {
+  color: var(--menu-left-grey);
+  padding: 20px;
+}
+
+.menu-under-logo span {
+  vertical-align: super;
+}
+
+.menu-under-logo > div {
+  margin-bottom: 5px;
+}
+
+.menu-under-logo img {
+  width: 15%;
+}
+
+.playlist {
+  padding: 0 20px;
+}
+
+.playlist h4 {
+  color: white;
+  margin-bottom: 10px;
+}
+
+.playlist i {
+  color: var(--menu-left-grey);
+  font-size: 50px;
+  margin-right: 10px;
+}
+
+.playlist > *,
+.playlist ul li {
+  margin-bottom: 20px;
+}
+
+/*main content*/
+
+#main-content {
   width: 100%;
   background-color: green;
   overflow-y: scroll;
 }
+
 /*
 ---------------
 FOOTER
@@ -60,7 +135,16 @@ RESPONSIVE
 
 /*da 0 a 576px*/
 @media screen and (max-width: 576px) {
-  .menu-left {
+  #menu-left {
     width: 50px;
+    padding: 5px 10px;
+  }
+
+  .xs-none {
+    display: none;
+  }
+
+  .xs-display {
+    display: block;
   }
 }
