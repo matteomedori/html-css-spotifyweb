@@ -4,6 +4,12 @@ RESET
 ---------------
 */
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /*
 ---------------
 COMMON
@@ -16,14 +22,45 @@ MAIN
 ---------------
 */
 
+main {
+  display: flex;
+}
+
+.menu-left,
+.main-content {
+  height: calc(100vh - 90px);
+}
+
+.menu-left {
+  width: 230px;
+  background-color: yellow;
+}
+
+.main-content {
+  width: 100%;
+  background-color: green;
+  overflow-y: scroll;
+}
 /*
 ---------------
 FOOTER
 ---------------
 */
 
+footer {
+  height: 90px;
+  background-color: red;
+}
+
 /*
 ---------------
 RESPONSIVE
 ---------------
 */
+
+/*da 0 a 576px*/
+@media screen and (max-width: 576px) {
+  .menu-left {
+    width: 50px;
+  }
+}
