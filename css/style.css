@@ -216,33 +216,41 @@ main {
   border-bottom: 2px solid var(--menu-left-border);
 }
 
-/*recently played*/
+/*sezioni
+--recently played--
+--creato per-------
+*/
 
-#recently-played {
+#recently-played,
+#creato-per {
   padding: 20px;
 }
 
-#recently-played .song-container {
+.song-container {
   margin-top: 30px;
   gap: 10px;
   flex-wrap: wrap;
 }
 
-#recently-played .song-container > div {
+.song-container > div {
   width: calc((100% - 10px) / 2);
   text-align: center;
 }
 
-#recently-played .song-container > div h4 {
+.song-container > div h4 {
   margin: 20px 0 10px 0;
 }
 
-#recently-played .song-container .subtitle {
+.subtitle {
   color: var(--menu-left-grey);
   font-size: 14px;
 }
 
-#recently-played .song-container .song-img {
+#creato-per .subtitle {
+  margin-top: 10px;
+}
+
+.song-container .song-img {
   position: relative;
 }
 
@@ -462,7 +470,7 @@ RESPONSIVE
     filter: brightness(0.5);
   }
 
-  .song-container > div:nth-child(3) .s-none {
+  #recently-played .song-container > div:nth-child(3) .s-none {
     display: block;
   }
 }
