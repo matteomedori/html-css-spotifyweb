@@ -361,7 +361,7 @@ footer > div:nth-of-type(2) .volume-bar {
 
 footer > div:nth-of-type(2) .row-top {
   align-self: center;
-  gap: 20px;
+  gap: 15px;
 }
 
 footer > div:nth-of-type(2) .row-top i {
@@ -370,7 +370,7 @@ footer > div:nth-of-type(2) .row-top i {
 
 footer > div:nth-of-type(2) .row-top i:nth-of-type(3) {
   font-size: 30px;
-  padding: 0 20px;
+  padding: 0 15px;
 }
 
 /*footer right part*/
@@ -460,15 +460,13 @@ RESPONSIVE
 
 /*da 768px in poi*/
 @media screen and (min-width: 768px) {
+  /*common*/
+
   .s-display {
     display: none;
   }
-  /*footer*/
 
-  footer .icons-foot-left {
-    display: flex;
-    gap: 10px;
-  }
+  /*main content*/
 
   .song-container > div {
     width: calc((100% - 30px) / 4);
@@ -477,19 +475,28 @@ RESPONSIVE
   .filter-brightness-small {
     filter: brightness(1);
   }
+
+  /*footer*/
+
+  footer .icons-foot-left {
+    display: flex;
+    gap: 10px;
+  }
 }
 
 /*da 992px in poi*/
 @media screen and (min-width: 992px) {
+  /*main content*/
+
   .song-container > div {
     width: calc((100% - 50px) / 6);
   }
 
-  .filter-brightness-large {
-    filter: brightness(0.5);
+  .song-container > div:nth-child(3) .s-none {
+    display: block;
   }
 
-  #recently-played .song-container > div:nth-child(3) .s-none {
-    display: block;
+  .filter-brightness-large {
+    filter: brightness(0.5);
   }
 }
