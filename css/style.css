@@ -68,6 +68,7 @@ MAIN
   background-color: var(--bg-menu-left);
   color: var(--menu-left-grey);
   flex-direction: column;
+  flex-shrink: 0;
 }
 
 #logo {
@@ -160,6 +161,8 @@ main {
   overflow-y: scroll;
 }
 
+/*fixed bar*/
+
 #main-content .fixed {
   width: calc(100vw - 230px);
   height: 85px;
@@ -183,6 +186,31 @@ main {
   margin-top: 85px;
 }
 
+/*nav-menu*/
+
+.under-fixed .nav-menu {
+  color: #707377;
+  flex-wrap: wrap;
+  padding: 25px 45px;
+  font-size: 10px;
+  justify-content: center;
+  gap: 25px;
+  font-weight: bold;
+}
+
+.under-fixed .nav-menu > div:first-of-type {
+  position: relative;
+}
+
+.under-fixed .nav-menu > div:first-of-type::after {
+  content: "";
+  position: absolute;
+  left: 35%;
+  bottom: -2px;
+  width: 30%;
+  border-bottom: 2px solid var(--menu-left-border);
+}
+
 /*
 ---------------
 FOOTER
@@ -196,6 +224,10 @@ footer {
   color: white;
   justify-content: space-between;
   padding: 10px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 10;
 }
 
 footer > div:first-of-type,
@@ -341,6 +373,7 @@ RESPONSIVE
 
   #main-content .fixed {
     width: calc(100vw - 50px);
+  }
 }
 
 /*da 768px in poi*/
