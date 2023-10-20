@@ -50,7 +50,7 @@ img {
   display: none;
 }
 
-.s-none {
+.img-play-display {
   display: none;
 }
 
@@ -281,15 +281,12 @@ main {
   transform: translate(-50%, -50%);
 }
 
-.filter-brightness-small {
-  filter: brightness(0.5);
-}
-
 /*
 ---------------
 FOOTER
 ---------------
 */
+
 /*footer common*/
 
 footer {
@@ -390,6 +387,72 @@ footer > div:last-of-type i {
 
 /*
 ---------------
+EFFECTS
+---------------
+*/
+
+#main-content .nav-menu li:hover,
+.menu-under-logo > div:hover,
+.playlist > div:first-of-type:hover,
+.playlist ul li:hover,
+.bottom-menu-left > div:first-of-type span:hover {
+  color: white;
+  cursor: pointer;
+}
+
+#main-content .fixed button:hover {
+  transform: scale(1.08);
+}
+
+.playlist > div:first-of-type:hover .fa-square-plus {
+  color: white;
+}
+
+.song-img:hover img {
+  filter: brightness(0.5);
+  cursor: pointer;
+}
+
+.song-img:hover .img-play-display {
+  display: block;
+  cursor: pointer;
+}
+
+.icons-foot-left i:hover {
+  color: white;
+  cursor: pointer;
+}
+.name-song:hover {
+  color: white;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+footer .row-top .fa-circle-play:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.volume-bar:hover hr:last-of-type {
+  background-color: var(--menu-left-border);
+  cursor: pointer;
+}
+
+.volume-bar:hover hr:first-of-type::after {
+  content: "";
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: white;
+  display: block;
+  position: absolute;
+  left: 28%;
+  top: -5px;
+  z-index: 3;
+}
+
+/*
+---------------
 RESPONSIVE
 ---------------
 */
@@ -404,10 +467,6 @@ RESPONSIVE
 
   .xs-display {
     display: block;
-  }
-
-  .s-display {
-    display: none;
   }
 
   /*menu-left*/
@@ -452,28 +511,14 @@ RESPONSIVE
   #main-content .fixed {
     width: calc(100vw - 50px);
   }
-
-  .filter-brightness-small {
-    filter: brightness(1);
-  }
 }
 
 /*da 768px in poi*/
 @media screen and (min-width: 768px) {
-  /*common*/
-
-  .s-display {
-    display: none;
-  }
-
   /*main content*/
 
   .song-container > div {
     width: calc((100% - 30px) / 4);
-  }
-
-  .filter-brightness-small {
-    filter: brightness(1);
   }
 
   /*footer*/
@@ -490,13 +535,5 @@ RESPONSIVE
 
   .song-container > div {
     width: calc((100% - 50px) / 6);
-  }
-
-  .song-container > div:nth-child(3) .s-none {
-    display: block;
-  }
-
-  .filter-brightness-large {
-    filter: brightness(0.5);
   }
 }
